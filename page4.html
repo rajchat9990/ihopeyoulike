@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Belated Payback</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-exit">
+  <div class="container">
+    <div class="card">
+      <div class="header">
+        <div class="brand"><div class="logo">🔥</div><div>
+          <div class="title">Payback Time</div>
+          <div class="subtitle">Sarcastic yet affectionate</div>
+        </div></div>
+        <div class="controls">
+          <button class="btn" data-confetti>Surprise</button>
+          <a class="btn ghost" href="index.html" data-transition>Home</a>
+        </div>
+      </div>
+
+      <div class="hero">
+        <div class="huge neon">PAYBACK</div>
+        <div class="typewriter" data-type="Calculating perfect revenge... (reveals: cake, hugs and petty jokes)" data-speed="26"></div>
+
+        <div style="margin-top:12px">
+          <button class="btn" id="loadBtn">Run Payback</button>
+          <div id="loader" style="margin-top:10px;color:var(--muted);display:none">Loading <span id="dots">.</span></div>
+        </div>
+
+        <div style="margin-top:16px">
+          <button class="btn ghost" data-meme='["assets/meme2.gif","assets/meme1.gif"]'>Open Meme Vault</button>
+        </div>
+
+      </div>
+    </div>
+
+    <aside class="side">
+      <div class="box">
+        <div style="font-weight:800">Gratitude / Threat</div>
+        <div style="color:var(--muted);margin-top:8px">You are forgiven after cake. Threat-level resets to zero if you bring pastries.</div>
+      </div>
+    </aside>
+  </div>
+
+  <canvas class="conf"></canvas>
+  <script src="script.js"></script>
+  <script>
+    (function(){
+      const loader = document.getElementById('loader'), dots = document.getElementById('dots'), btn = document.getElementById('loadBtn');
+      let t = 0, dotInt;
+      btn.addEventListener('click', ()=>{
+        loader.style.display = 'block';
+        btn.disabled = true;
+        dotInt = setInterval(()=>{ dots.textContent = '.'.repeat((t%3)+1); t++; }, 450);
+        setTimeout(()=>{
+          clearInterval(dotInt);
+          loader.textContent = 'Done — Revenge served 🎂';
+          document.querySelector('[data-confetti]').click();
+          setTimeout(()=> loader.textContent = 'You are now owed cake.', 1800);
+        }, 2200 + Math.random()*1400);
+      });
+    })();
+  </script>
+</body>
+</html>

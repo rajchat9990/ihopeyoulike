@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+  color: #222;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.container {
+  padding: 50px;
+}
+
+h1, h2 {
+  animation: fadeIn 2s ease-in-out;
+}
+
+img {
+  max-width: 300px;
+  margin: 150px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.next-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 15px 30px;
+  background: #ff4e50;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.next-btn:hover {
+  background: #fc913a;
+  transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.shake {
+  animation: shake 0.5s infinite;
+}
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  20% { transform: translate(-1px, -2px) rotate(-1deg); }
+  40% { transform: translate(-3px, 0px) rotate(1deg); }
+  60% { transform: translate(3px, 2px) rotate(0deg); }
+  80% { transform: translate(1px, -1px) rotate(1deg); }
+  100% { transform: translate(-1px, 2px) rotate(-1deg); }
+}
+
+.balloon {
+  width: 100px;
+  animation: float 6s ease-in-out infinite;
+}
+@keyframes float {
+  0% { transform: translateY(100vh); }
+  100% { transform: translateY(-120vh); }
+}
+
+.meme {
+  width: 80%;       /* scale video */
+  max-width: 500px; /* prevent it from being too big */
+  height: auto;
+  display: block;
+  margin: 20px auto; /* center horizontally */
+  border-radius: 15px;
+}
+
+.meme {
+  width: 80%;       /* scale width like the GIF */
+  max-width: 500px; /* same maximum width */
+  height: auto;     /* keep aspect ratio */
+  display: block;   /* block element */
+  margin: 20px auto; /* center horizontally and add vertical spacing */
+  border-radius: 15px;
+}
